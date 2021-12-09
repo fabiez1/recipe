@@ -6,14 +6,13 @@ import javax.persistence.*;
 public class RecipeIngredient {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(insertable = false, updatable = false)
     private int id;
     private double amount;
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "id")
-    public Ingredient ingredient;
+    private Ingredient ingredient;
     public Measurement measurement;
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "id")
     public Recipe recipe;
 
     public RecipeIngredient(int id, double amount) {
