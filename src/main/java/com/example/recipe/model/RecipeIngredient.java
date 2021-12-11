@@ -23,6 +23,11 @@ public class RecipeIngredient {
         this.recipe = recipe;
     }
 
+    public RecipeIngredient(int id, double amount) {
+        this.id = id;
+        this.amount = amount;
+    }
+
     public RecipeIngredient() {
 
     }

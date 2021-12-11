@@ -18,6 +18,11 @@ public class RecipeCategory {
         this.recipes = recipes;
     }
 
+    public RecipeCategory(int id, String category) {
+        this.id = id;
+        this.category = category;
+    }
+
     public RecipeCategory() {
 
     }
