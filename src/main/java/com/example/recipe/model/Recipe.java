@@ -13,7 +13,7 @@ public class Recipe {
     @OneToMany(mappedBy = "recipe", fetch = FetchType.LAZY)
     private List<RecipeIngredient> recipeIngredient;
     @OneToOne(cascade = CascadeType.ALL)
-    public RecipeInstruction instruction;
+    private RecipeInstruction instruction;
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "recipe_recipe_categories", joinColumns = @JoinColumn(name = "recipe_id")
             , inverseJoinColumns = @JoinColumn(name = "recipe_category_id"))
