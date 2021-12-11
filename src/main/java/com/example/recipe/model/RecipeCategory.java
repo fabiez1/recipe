@@ -12,9 +12,10 @@ public class RecipeCategory {
     @ManyToMany(mappedBy = "categories")
     private Set<Recipe> recipes;
 
-    public RecipeCategory(int id, String category) {
+    public RecipeCategory(int id, String category, Set<Recipe> recipes) {
         this.id = id;
         this.category = category;
+        this.recipes = recipes;
     }
 
     public RecipeCategory() {

@@ -11,13 +11,16 @@ public class RecipeIngredient {
     private double amount;
     @ManyToOne(cascade = CascadeType.ALL)
     private Ingredient ingredient;
-    public Measurement measurement;
+    private Measurement measurement;
     @ManyToOne(cascade = CascadeType.ALL)
-    public Recipe recipe;
+    private Recipe recipe;
 
-    public RecipeIngredient(int id, double amount) {
+    public RecipeIngredient(int id, double amount, Ingredient ingredient, Measurement measurement, Recipe recipe) {
         this.id = id;
         this.amount = amount;
+        this.ingredient = ingredient;
+        this.measurement = measurement;
+        this.recipe = recipe;
     }
 
     public RecipeIngredient() {

@@ -19,9 +19,12 @@ public class Recipe {
             , inverseJoinColumns = @JoinColumn(name = "recipe_category_id"))
     private Set<RecipeCategory> categories;
 
-    public Recipe(int id, String recipeName) {
+    public Recipe(int id, String recipeName, List<RecipeIngredient> recipeIngredient, RecipeInstruction instruction, Set<RecipeCategory> categories) {
         this.id = id;
         this.recipeName = recipeName;
+        this.recipeIngredient = recipeIngredient;
+        this.instruction = instruction;
+        this.categories = categories;
     }
 
     public Recipe() {
