@@ -27,11 +27,6 @@ public class Recipe {
         this.categories = categories;
     }
 
-    public Recipe(int id, String recipeName) {
-        this.id = id;
-        this.recipeName = recipeName;
-    }
-
     public Recipe() {
 
     }
