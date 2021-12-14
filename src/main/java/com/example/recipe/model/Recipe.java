@@ -42,4 +42,28 @@ public class Recipe {
     public void setRecipeName(String recipeName) {
         this.recipeName = recipeName;
     }
+
+    public List<RecipeIngredient> getRecipeIngredient() {
+        return recipeIngredient;
+    }
+
+    public void setRecipeIngredient(List<RecipeIngredient> recipeIngredient) {
+        this.recipeIngredient = recipeIngredient;
+    }
+
+    public RecipeInstruction getInstruction() {
+        return instruction;
+    }
+
+    public void setInstruction(RecipeInstruction instruction) {
+        this.instruction = instruction;
+    }
+
+    public Set<RecipeCategory> getCategories() {
+        return categories;
+    }
+
+    public void setCategories(Set<RecipeCategory> categories) {
+        this.categories = categories;
+    }
 }

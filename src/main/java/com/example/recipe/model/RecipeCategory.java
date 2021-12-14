@@ -33,4 +33,12 @@ public class RecipeCategory {
     public void setCategory(String category) {
         this.category = category;
     }
+
+    public Set<Recipe> getRecipes() {
+        return recipes;
+    }
+
+    public void setRecipes(Set<Recipe> recipes) {
+        this.recipes = recipes;
+    }
 }
