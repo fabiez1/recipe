@@ -11,13 +11,15 @@ import java.util.List;
 import java.util.Set;
 
 public interface RecipeDAO extends JpaRepository<Recipe, Integer> {
+
+    
     @Query("SELECT r FROM Recipe r WHERE r.recipeName = LOWER(:name)")
     List<Recipe> findByRecipeName(
             @Param("name") String recipeName
     );
-    @Query("SELECT r FROM Recipe r JOIN Ingredient i WHERE r.recipeIngredient = LOWER(:ingredient)")
+    @Query("SELECT r FROM Recipe r, RecipeIngredient ri INNER JOIN ri.ingredient WHERE ri.ingredient = LOWER(:ingredient)")
     List<Recipe> findRecipesByRecipeIngredient(
-            @Param("ingredient") List<RecipeIngredient> recipeIngredients);
+            @Param("ingredient") List<RecipeIngredient> ingredient);
     @Query("SELECT r FROM Recipe r JOIN RecipeCategory rc WHERE r.categories = LOWER(:category)")
     Set<Recipe> findRecipesByCategory(
             @Param("category") List<RecipeCategory> categories
