@@ -39,6 +39,14 @@ public class RecipeIngredient {
         this.amount = amount;
     }
 
+    public Ingredient getIngredient() {
+        return ingredient;
+    }
+
+    public void setIngredient(Ingredient ingredient) {
+        this.ingredient = ingredient;
+    }
+
     public Measurement getMeasurement() {
         return measurement;
     }
