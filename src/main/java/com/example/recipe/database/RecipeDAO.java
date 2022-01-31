@@ -1,8 +1,8 @@
 package com.example.recipe.database;
 
-import com.example.recipe.model.Recipe;
-import com.example.recipe.model.RecipeCategory;
-import com.example.recipe.model.RecipeIngredient;
+import com.example.recipe.model.entity.Recipe;
+import com.example.recipe.model.entity.RecipeCategory;
+import com.example.recipe.model.entity.RecipeIngredient;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

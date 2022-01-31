@@ -1,25 +1,22 @@
-package com.example.recipe.model;
+package com.example.recipe.model.dto;
 
-import javax.persistence.*;
+import com.example.recipe.model.entity.Recipe;
+
+import java.io.Serializable;
 import java.util.Set;
 
-@Entity
-public class RecipeCategory {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class RecipeCategoryDTO implements Serializable {
     private int id;
     private String category;
-    @ManyToMany(mappedBy = "categories")
     private Set<Recipe> recipes;
 
-    public RecipeCategory(int id, String category, Set<Recipe> recipes) {
+    public RecipeCategoryDTO(int id, String category, Set<Recipe> recipes) {
         this.id = id;
         this.category = category;
         this.recipes = recipes;
     }
 
-    public RecipeCategory() {
-
+    public RecipeCategoryDTO() {
     }
 
     public int getId() {

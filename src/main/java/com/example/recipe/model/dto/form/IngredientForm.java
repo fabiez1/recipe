@@ -1,22 +1,21 @@
-package com.example.recipe.model;
+package com.example.recipe.model.dto.form;
 
-import javax.persistence.*;
+import com.sun.istack.NotNull;
+import org.springframework.validation.annotation.Validated;
 
-@Entity
-public class Ingredient {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+@Validated
+public class IngredientForm {
+    @NotNull
     private int id;
-    @Column(unique = true)
+    @NotNull
     private String ingredientName;
 
-    public Ingredient(int id, String ingredientName) {
+    public IngredientForm(int id, String ingredientName) {
         this.id = id;
         this.ingredientName = ingredientName;
     }
 
-    public Ingredient() {
-
+    public IngredientForm() {
     }
 
     public int getId() {

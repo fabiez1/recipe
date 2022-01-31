@@ -1,21 +1,25 @@
-package com.example.recipe.model;
+package com.example.recipe.model.dto.form;
 
-import javax.persistence.*;
+import com.example.recipe.model.entity.Ingredient;
+import com.example.recipe.model.entity.Measurement;
+import com.example.recipe.model.entity.Recipe;
+import com.sun.istack.NotNull;
+import org.springframework.validation.annotation.Validated;
 
-@Entity
-public class RecipeIngredient {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(insertable = false, updatable = false)
+@Validated
+public class RecipeIngredientForm {
+    @NotNull
     private int id;
+    @NotNull
     private double amount;
-    @ManyToOne(cascade = CascadeType.ALL)
+    @NotNull
     private Ingredient ingredient;
+    @NotNull
     private Measurement measurement;
-    @ManyToOne(cascade = CascadeType.ALL)
+    @NotNull
     private Recipe recipe;
 
-    public RecipeIngredient(int id, double amount, Ingredient ingredient, Measurement measurement, Recipe recipe) {
+    public RecipeIngredientForm(int id, double amount, Ingredient ingredient, Measurement measurement, Recipe recipe) {
         this.id = id;
         this.amount = amount;
         this.ingredient = ingredient;
@@ -23,8 +27,7 @@ public class RecipeIngredient {
         this.recipe = recipe;
     }
 
-    public RecipeIngredient() {
-
+    public RecipeIngredientForm() {
     }
 
     public int getId() {

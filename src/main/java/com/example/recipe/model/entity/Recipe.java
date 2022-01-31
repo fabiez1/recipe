@@ -1,4 +1,4 @@
-package com.example.recipe.model;
+package com.example.recipe.model.entity;
 
 import javax.persistence.*;
 import java.util.List;
@@ -28,7 +28,6 @@ public class Recipe {
     }
 
     public Recipe() {
-
     }
 
     public int getId() {
