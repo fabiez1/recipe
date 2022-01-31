@@ -8,10 +8,10 @@ import com.example.recipe.model.entity.Ingredient;
 import com.example.recipe.model.entity.Recipe;
 import com.example.recipe.model.entity.RecipeIngredient;
 import com.example.recipe.model.entity.RecipeInstruction;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
-@Service
+@Component
 @Transactional
 public class EntityToDTOConverter implements DTOService{
     @Override
